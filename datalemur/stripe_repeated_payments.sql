@@ -1,5 +1,8 @@
 WITH repeats AS
-(SELECT t1.merchant_id, (t1.transaction_timestamp) AS first_trans, t2.transaction_timestamp, t1.amount
+(SELECT t1.merchant_id, 
+  (t1.transaction_timestamp) AS first_trans, 
+  t2.transaction_timestamp, 
+  t1.amount
 FROM transactions t1
 INNER JOIN transactions t2 
 ON t1.transaction_timestamp != t2.transaction_timestamp
